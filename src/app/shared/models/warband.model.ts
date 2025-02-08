@@ -4,7 +4,7 @@ export class Warband {
   name: string;
   gold: number = 50;
   experience: number = 0;
-  members: string[] = [];
+  members: Model[] = [];
 
   constructor(name: string="New Warband") {
     this.name = name;
