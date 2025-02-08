@@ -1,1 +1,17 @@
-<input [value]="warbandDataService.current_warband!.name"/>
+<main>
+  <div class="content">
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput [value]="currentWarband.warbandName" (input)="onNameInput($event)">
+        </mat-form-field>
+        <p>Gold: {{ currentWarband.gold }}</p>
+        <p>Experience: {{ currentWarband.experience }}</p>
+        <button mat-flat-button (click)="addNewWarbandMember()">Add Member</button>
+        @for (member of currentWarband.members; track member) {
+          {{ member.name }}
+        }
+      </mat-card-content>
+    </mat-card>
+  </div>
+</main>

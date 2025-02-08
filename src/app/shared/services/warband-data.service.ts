@@ -11,7 +11,7 @@ export class WarbandDataService {
   }
 
   warbands: Warband[] = [];
-  current_warband: Warband | null = null;
+  current_warband = signal<Warband | null>(null);
 
   saveWarbandData() {
     localStorage.setItem("warbandData", JSON.stringify(this.warbands));
@@ -22,12 +22,12 @@ export class WarbandDataService {
   }
 
   createWarband(name: string = "New Warband") {
-    this.current_warband = new Warband(name);
+    this.current_warband.set(new Warband(name));
     if (this.warbands === null)
     {
       this.warbands = []
     }
-    this.warbands.push(this.current_warband);
+    this.warbands.push(this.current_warband()!);
   }
 
 }

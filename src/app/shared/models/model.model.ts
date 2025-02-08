@@ -1,16 +1,16 @@
 export class Model {
-  name: String;
+  name: string;
   agility: number;
   presence: number;
   strength: number;
   toughness: number;
 
-  constructor(name: string, agility: number, presence: number, strength: number, toughness: number) {
+  constructor(name: string) {
     this.name = name;
-    this.agility = agility;
-    this.presence = presence;
-    this.strength = strength;
-    this.toughness = toughness;
+    this.agility = 0;
+    this.presence = 0;
+    this.strength = 0;
+    this.toughness = 0;
   }
 
 
