@@ -4,9 +4,10 @@ import {Warband} from '../models/warband.model';
 @Injectable({
   providedIn: 'root'
 })
-export class WarbandDataServiceService {
+export class WarbandDataService {
 
   constructor() {
+    this.loadWarbandData()
   }
 
   warbands: Warband[] = [];
@@ -20,8 +21,12 @@ export class WarbandDataServiceService {
     this.warbands = JSON.parse(localStorage.getItem("warbandData") as string) as Warband[];
   }
 
-  createWarband(name: string) {
+  createWarband(name: string = "New Warband") {
     this.current_warband = new Warband(name);
+    if (this.warbands === null)
+    {
+      this.warbands = []
+    }
     this.warbands.push(this.current_warband);
   }
 

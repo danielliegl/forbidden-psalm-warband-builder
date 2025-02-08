@@ -6,7 +6,7 @@ export class Warband {
   experience: number = 0;
   members: string[] = [];
 
-  constructor(name: string) {
+  constructor(name: string="New Warband") {
     this.name = name;
   }
 }

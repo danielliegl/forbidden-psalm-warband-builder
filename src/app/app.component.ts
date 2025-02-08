@@ -4,7 +4,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {FooterComponent} from './footer/footer.component';
-import {WarbandDataServiceService} from './shared/services/warband-data-service.service';
+import {WarbandDataService} from './shared/services/warband-data.service';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, MatToolbarModule, MatIconModule, MatButtonModule, FooterComponent],
@@ -14,10 +14,4 @@ import {WarbandDataServiceService} from './shared/services/warband-data-service.
 export class AppComponent {
   title = 'forbidden-psalm-warband-builder';
 
-  constructor(private warbandDataService: WarbandDataServiceService) {
-  }
-
-  ngOnInit(): void {
-    this.warbandDataService.loadWarbandData()
-  }
 }

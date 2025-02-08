@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {WarbandDataService} from '../shared/services/warband-data.service';
 
 @Component({
   selector: 'app-builder',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './builder.component.scss'
 })
 export class BuilderComponent {
+  constructor(public warbandDataService: WarbandDataService) {
+  }
+
+
 
 }

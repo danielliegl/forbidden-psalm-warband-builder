@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {MatButton} from '@angular/material/button';
-import {WarbandDataServiceService} from '../shared/services/warband-data-service.service';
+import {WarbandDataService} from '../shared/services/warband-data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,13 @@ import {WarbandDataServiceService} from '../shared/services/warband-data-service
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  constructor(private warbandDataService: WarbandDataServiceService) {}
-
-  onCreateWarbandClick(): void {
-
+  constructor(private warbandDataService: WarbandDataService,
+              private router: Router
+  ) {
   }
+
+  onCreateWarbandClick() {
+    this.warbandDataService.createWarband();
+    this.router.navigate(['builder']);
+  };
 }
